@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Younas Ahmad | Professional Portfolio</title> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+  <link rel="stylesheet" href="css/style.css"> 
+ <style type="text/css" id="dcoder_stylesheet">/* CSS Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #777;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Header & Navigation */
+header {
+    background: white;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-img {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.skills {
+    margin-top: 30px;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-per {
+    height: 100%;
+    background: var(--secondary-color);
+    border-radius: 5px;
+    position: relative;
+    width: 0;
+    transition: width 1s ease;
+}
+
+/* Portfolio Section */
+.portfolio {
+    background: #f5f5f5;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.filter-btn.active {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.portfolio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portfolio-item:hover .portfolio-img img {
+    transform: scale(1.1);
+}
+
+.portfolio-info {
+    padding: 20px;
+}
+
+.portfolio-info h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.portfolio-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    color: var(--text-light);
+}
+
+/* Contact Section */
+.contact {
+    background: #f5f5f5;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.contact-text h3 {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+textarea.form-control {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 0;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        transition: var(--transition);
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .portfolio-filters {
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        margin-bottom: 10px;
+    }
+}</style></head> 
+ <body> <!-- Header --> 
+  <header> 
+   <div class="container"> 
+    <nav class="navbar"> <a href="#" class="logo">Port<span>folio</span></a> 
+     <ul class="nav-links"> 
+      <li><a href="#home">Home</a></li> 
+      <li><a href="#about">About</a></li> 
+      <li><a href="#portfolio">Portfolio</a></li> 
+      <li><a href="#services">Services</a></li> 
+      <li><a href="#contact">Contact</a></li> 
+     </ul> 
+     <div class="hamburger"> <i class="fas fa-bars"></i> 
+     </div> 
+    </nav> 
+   </div> 
+  </header> <!-- Hero Section --> 
+  <section id="home" class="hero"> 
+   <div class="container"> 
+    <div class="hero-content"> 
+     <h1>Younas Ahmad</h1> 
+     <p>Full Stack Developer &amp; UI/UX Designer with 5+ years of experience creating digital solutions that drive business growth.</p> 
+     <div class="hero-btns"> <a href="#portfolio" class="btn">View My Work</a> <a href="#contact" class="btn btn-outline">Contact Me</a> 
+     </div> 
+    </div> 
+   </div> 
+  </section> <!-- About Section --> 
+  <section id="about" class="section"> 
+   <div class="container"> 
+    <div class="section-title"> 
+     <h2>About Me</h2> 
+     <p>Get to know me better</p> 
+    </div> 
+    <div class="about-content"> 
+     <div class="about-img"> 
+
+      <img src="C:\Users\mabbas\Pictures\html\Untitled Design.png" alt="Untitled Design.png">
+      
+    
+     <div><div class="about-text"> 
+      <h3>Hello! I'm Younas Ahmad</h3> 
+      <p>I'm a passionate full-stack developer specializing in creating exceptional digital experiences. With over 5 years in the industry, I've helped numerous clients transform their ideas into successful digital products.</p> 
+      <p>My expertise spans across front-end and back-end development, with a strong focus on responsive design, performance optimization, and user experience.</p> 
+      <div class="skills"> 
+       <div class="skill-item"> 
+        <div class="skill-name"> <span>Web Development</span> <span>95%</span> 
+        </div> 
+        <div class="skill-bar"> 
+         <div class="skill-per" data-percent="95"></div> 
+        </div> 
+       </div> 
+       <div class="skill-item"> 
+        <div class="skill-name"> <span>UI/UX Design</span> <span>85%</span> 
+        </div> 
+        <div class="skill-bar"> 
+         <div class="skill-per" data-percent="85"></div> 
+        </div> 
+       </div> 
+       <div class="skill-item"> 
+        <div class="skill-name"> <span>Mobile Development</span> <span>80%</span> 
+        </div> 
+        <div class="skill-bar"> 
+         <div class="skill-per" data-percent="80"></div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div></div></section> <!-- Portfolio Section --> 
+  <section id="portfolio" class="section portfolio"> 
+   <div class="container"> 
+    <div class="section-title"> 
+     <h2>My Portfolio</h2> 
+     <p>Check out some of my recent work</p> 
+    </div> 
+    <div class="portfolio-filters"> <button class="filter-btn active" data-filter="all">All</button> <button class="filter-btn" data-filter="web">Web Design</button> <button class="filter-btn" data-filter="app">App Development</button> <button class="filter-btn" data-filter="branding">Branding</button> 
+    </div> 
+    <div class="portfolio-grid"> 
+     <div class="portfolio-item" data-category="web"> 
+      <div class="portfolio-img"> 
+       <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1674&amp;q=80" alt="Project 1"> 
+      </div> 
+      <div class="portfolio-info"> 
+       <h3>E-commerce Website</h3> 
+       <p>Full-stack e-commerce solution with payment integration</p> 
+      </div> 
+     </div> 
+     <div class="portfolio-item" data-category="app"> 
+      <div class="portfolio-img"> 
+       <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1674&amp;q=80" alt="Project 2"> 
+      </div> 
+      <div class="portfolio-info"> 
+       <h3>Fitness Tracking App</h3> 
+       <p>Mobile application for tracking workouts and nutrition</p> 
+      </div> 
+     </div> 
+     <div class="portfolio-item" data-category="branding"> 
+      <div class="portfolio-img"> 
+       <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1674&amp;q=80" alt="Project 3"> 
+      </div> 
+      <div class="portfolio-info"> 
+       <h3>Brand Identity Design</h3> 
+       <p>Complete branding package for a tech startup</p> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </section> <!-- Services Section --> 
+  <section id="services" class="section"> 
+   <div class="container"> 
+    <div class="section-title"> 
+     <h2>My Services</h2> 
+     <p>What I can do for you</p> 
+    </div> 
+    <div class="services-grid"> 
+     <div class="service-card"> 
+      <div class="service-icon"> <i class="fas fa-code"></i> 
+      </div> 
+      <h3>Web Development</h3> 
+      <p>Custom website development using modern technologies and frameworks to create fast, responsive, and scalable web applications.</p> 
+     </div> 
+     <div class="service-card"> 
+      <div class="service-icon"> <i class="fas fa-paint-brush"></i> 
+      </div> 
+      <h3>UI/UX Design</h3> 
+      <p>User-centered design approach to create intuitive and engaging digital experiences that drive user satisfaction and business goals.</p> 
+     </div> 
+     <div class="service-card"> 
+      <div class="service-icon"> <i class="fas fa-mobile-alt"></i> 
+      </div> 
+      <h3>App Development</h3> 
+      <p>Cross-platform mobile application development for iOS and Android using React Native and Flutter.</p> 
+     </div> 
+    </div> 
+   </div> 
+  </section> <!-- Contact Section --> 
+  <section id="contact" class="section contact"> 
+   <div class="container"> 
+    <div class="section-title"> 
+     <h2>Contact Me</h2> 
+     <p>Let's work together</p> 
+    </div> 
+    <div class="contact-content"> 
+     <div class="contact-info"> 
+      <div class="contact-item"> 
+       <div class="contact-icon"> <i class="fas fa-map-marker-alt"></i> 
+       </div> 
+       <div class="contact-text"> 
+        <h3>Location</h3> 
+        <p>Swat, Pakistan </p> 
+       </div> 
+      </div> 
+      <div class="contact-item"> 
+       <div class="contact-icon"> <i class="fas fa-phone"></i> 
+       </div> 
+       <div class="contact-text"> 
+        <h3>Phone</h3> 
+        <p>03473181107</p> 
+       </div> 
+      </div> 
+      <div class="contact-item"> 
+       <div class="contact-icon"> <i class="fas fa-envelope"></i> 
+       </div> 
+       <div class="contact-text"> 
+        <h3>Email</h3> 
+        <p>younasahmad423@gmail.com</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="contact-form"> 
+      <form id="contactForm"> 
+       <div class="form-group"> 
+        <input type="text" class="form-control" placeholder="Your Name" required> 
+       </div> 
+       <div class="form-group"> 
+        <input type="email" class="form-control" placeholder="Your Email" required> 
+       </div> 
+       <div class="form-group"> 
+        <input type="text" class="form-control" placeholder="Subject" required> 
+       </div> 
+       <div class="form-group"> <textarea class="form-control" placeholder="Your Message" required></textarea> 
+       </div> <button type="submit" class="btn">Send Message</button> 
+      </form> 
+     </div> 
+    </div> 
+   </div> 
+  </section> <!-- Footer --> 
+  <footer> 
+   <div class="container"> 
+    <div class="footer-content"> 
+     <div class="footer-column"> 
+      <h3>Younas Ahmad</h3> 
+      <p>Full Stack Developer &amp; UI/UX Designer creating digital solutions that drive business growth.</p> 
+      <div class="social-links"> <a href="#"><i class="fab fa-linkedin"></i></a> <a href="#"><i class="fab fa-github"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-dribbble"></i></a> 
+      </div> 
+     </div> 
+     <div class="footer-column"> 
+      <h3>Quick Links</h3> 
+      <ul class="footer-links"> 
+       <li><a href="#home">Home</a></li> 
+       <li><a href="#about">About</a></li> 
+       <li><a href="#portfolio">Portfolio</a></li> 
+       <li><a href="#services">Services</a></li> 
+       <li><a href="#contact">Contact</a></li> 
+      </ul> 
+     </div> 
+     <div class="footer-column"> 
+      <h3>Services</h3> 
+      <ul class="footer-links"> 
+       <li><a href="#">Web Development</a></li> 
+       <li><a href="#">UI/UX Design</a></li> 
+       <li><a href="#">App Development</a></li> 
+       <li><a href="#">Branding</a></li> 
+       <li><a href="#">Consulting</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="copyright"> 
+     <p>© 2025 Younas Ahmad. All Rights Reserved.</p> 
+    </div> 
+   </div> 
+  </footer> <!-- Back to Top Button --> 
+  <div class="back-to-top"> <i class="fas fa-arrow-up"></i> 
+  </div> 
+  <script src="js/script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">// Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.querySelector('i').classList.toggle('fa-times');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.querySelector('i').classList.remove('fa-times');
+    });
+});
+
+// Portfolio Filtering
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        portfolioItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Animate Skill Bars on Scroll
+const skillBars = document.querySelectorAll('.skill-per');
+
+function animateSkillBars() {
+    skillBars.forEach(skillBar => {
+        const percent = skillBar.getAttribute('data-percent');
+        skillBar.style.width = percent + '%';
+    });
+}
+
+// Check if skill bars are in viewport
+function checkScroll() {
+    const skillsSection = document.querySelector('.skills');
+    if (!skillsSection) return;
+    
+    const sectionPos = skillsSection.getBoundingClientRect().top;
+    const screenPos = window.innerHeight / 1.3;
+
+    if (sectionPos < screenPos) {
+        animateSkillBars();
+    }
+}
+
+window.addEventListener('scroll', checkScroll);
+
+// Back to Top Button
+const backToTopBtn = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('active');
+    } else {
+        backToTopBtn.classList.remove('active');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Form Submission
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
+    });
+}
+
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 70,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Initialize skill bars on page load
+document.addEventListener('DOMContentLoaded', () => {
+    checkScroll();
+});</script></body></html>       
+
